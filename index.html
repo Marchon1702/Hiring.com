@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring.com</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+    <main>
+        <section class="main-frame">
+            <div class="c-loader">
+                <!--Animação de loading-->
+            </div>
+            <section class="perfil">
+                <div class="perfil-photo photo-question">
+                    <!--imagem de perfil-->
+                </div>
+                <div class="perfil-infos" style="display: non;">
+                   <h1>Escolha seu profissional</h1>
+                   <select id="exp">
+                    <option value="" selected disabled>
+                        Senioridade
+                    </option>
+                    <option value="jr">Junior</option>
+                    <option value="pl">Pleno</option>
+                    <option value="sr">Senior</option>
+                   </select>
+                   <select id="payment">
+                    <option value="" selected disabled>
+                        Salário
+                    </option>
+                    <option value="5">Até 5.000</option>
+                    <option value="8">Entre 5k e 8k</option>
+                    <option value="mais8k">+8k</option>
+                   </select>
+                   <select id="age">
+                    <option value="" selected disabled>
+                        Idade
+                    </option>
+                    <option value="25">Até 25</option>
+                    <option value="35">Até 35</option>
+                    <option value="36mais">36+</option>
+                   </select>
+                   <select id="gender">
+                    <option value="" selected disabled>
+                        Gênero
+                    </option>
+                    <option value="men">Masculino</option>
+                    <option value="women">Feminino</option>
+                   </select>
+                   <button id="send-btn">Buscar</button>
+                </div>
+            </section>
+            <div class="result">
+                <div class="result-infos">
+                    <h1 id="nome">
+                        <!--Nome do profissional encontrado-->
+                    </h1>
+                    <ul>
+                        <li id="senioridade">Senioridade: </li>
+                        <li id="idade">Idade: </li>
+                        <li id="salario">Último Salário: </li>
+                        <li id="empresa">Última Empresa: </li>
+                        <li id="estado">Estado: </li>
+                    </ul>
+                </div>
+                <button class="try-again">Tentar Novamente</button>
+            </div>
+        </section>
+    </main>
+    <script src="assets/script/main.js"></script>
+</body>
+</html>

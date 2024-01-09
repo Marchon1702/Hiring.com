@@ -339,24 +339,41 @@ function validation() {
 }
 
 function showResult(tracked, valid) {
-    const divResult = document.querySelector('.result')
-    const senioridade = document.querySelector('#senioridade')
+    const divResult = document.querySelector('.result-infos')
+    const features = [
+        divResult.querySelector('.nome'),
+        divResult.querySelector('#senioridade'),
+        divResult.querySelector('#idade'),
+        divResult.querySelector('#salario'),
+        divResult.querySelector('#empresa'),
+        divResult.querySelector('#estado')
+    ]        
     let experience 
-    console.log(valid)
-    for(property in tracked) {
-        if(valid) {
-            if(divResult.querySelector('#'+ property)){            
-                if(tracked.salario <= 5000) experience = 'Junior'
-                if(tracked.salario > 5000 && tracked.salario <= 8000)
-                experience = 'pleno'
-                if(tracked.salario > 8000) experience = 'Senior'
+    
+    
         
-                divResult.querySelector('#'+ property).innerHTML += tracked[property]
-
-            } else {
-                divResult.innerHTML = 'aaaaaaaaaaaaaaaaaaaaaa'
-            }           
+    if(valid) 
+        {if(tracked.salario <= 5000) {
+            experience = 'Junior'
+        } else if(tracked.salario > 5000 && tracked.salario <= 8000) {
+           experience = 'pleno' 
+        } else if(tracked.salario > 8000) {
+            experience = 'Senior' 
         }
+        features[0].innerHTML = tracked.nome
+        features[1].innerHTML = 'Senioridade: ' + experience
+        features[2].innerHTML = 'Idade: ' + tracked.idade
+        features[3].innerHTML = 'Salário: ' + tracked.salario
+        features[4].innerHTML = 'Empresa: ' + tracked.empresa
+        features[5].innerHTML = 'Estado: ' + tracked.estado
     } 
-    senioridade.innerHTML += experience    
+    
+    if(!valid) {
+        for(const datas of features) {
+            datas.innerHTML = ''
+        }
+        features[0].innerHTML = 'Sua pesquisa não retornou resultados, tente novamente!'
+    }
+           
+    console.log(valid)  
 }

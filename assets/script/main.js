@@ -373,7 +373,5 @@ function showResult(tracked, valid) {
             datas.innerHTML = ''
         }
         features[0].innerHTML = 'Sua pesquisa não retornou resultados, tente novamente!'
-    }
-           
-    console.log(valid)  
+    }  
 }
